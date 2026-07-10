@@ -30,8 +30,7 @@ body {
   line-height: 1.7;
 }
 
-h1,
-h2 {
+h1, h2 {
   font-family: "Qwigley", cursive;
   font-weight: 400;
   color: var(--dark-pink);
@@ -64,19 +63,13 @@ header {
 .navbar {
   width: 90%;
   margin: 20px auto 0;
-
   padding: 20px 40px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   background: rgba(255, 255, 255, 0.85);
-
   backdrop-filter: blur(12px);
-
   border-radius: 50px;
-
   box-shadow: var(--shadow);
 }
 
@@ -108,17 +101,11 @@ header {
 
 .hero {
   min-height: 100vh;
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   width: 90%;
-
   margin: auto;
-
   padding-top: 120px;
 }
 
@@ -133,35 +120,24 @@ header {
 
 .hero h2 {
   font-family: "Poppins", sans-serif;
-
   font-size: 1.5rem;
-
   color: var(--dark);
-
   margin: 20px 0;
 }
 
 .button {
   display: inline-block;
-
   margin-top: 30px;
-
   padding: 15px 35px;
-
   background: var(--pink);
-
   color: white;
-
   border-radius: 50px;
-
   text-decoration: none;
-
   transition: 0.3s;
 }
 
 .button:hover {
   transform: translateY(-5px);
-
   box-shadow: var(--shadow);
 }
 
@@ -173,29 +149,22 @@ header {
 
 .image-circle {
   width: 430px;
-
   height: 430px;
-
   border-radius: 50%;
-
   overflow: hidden;
-
   background: var(--soft-pink);
-
   padding: 15px;
 }
 
 .image-circle img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
   border-radius: 50%;
 }
 
 /* ==========================
-   SECTIONS
+   SECTIONS & CORES
 ========================== */
 
 .section {
@@ -209,7 +178,6 @@ header {
 
 .section-title span {
   color: var(--pink);
-
   font-weight: bold;
 }
 
@@ -219,25 +187,17 @@ header {
 
 .about-container {
   display: flex;
-
   align-items: center;
-
   gap: 50px;
 }
 
 .about-container img {
   width: 350px;
-
   height: 350px;
-
   object-fit: contain;
-
   background: white;
-
   padding: 15px;
-
   border-radius: 30px;
-
   box-shadow: var(--shadow);
 }
 
@@ -247,23 +207,16 @@ header {
 
 .journey-cards {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 30px;
 }
 
 .journey-card {
   background: linear-gradient(135deg, #fff0f6, #ffd6e7);
-
   padding: 25px;
-
   border-radius: 35px;
-
   box-shadow: var(--shadow);
-
   transition: 0.4s;
-
   overflow: hidden;
 }
 
@@ -273,60 +226,76 @@ header {
 
 .journey-card img {
   width: 100%;
-
   height: 280px;
-
   object-fit: contain;
-
   background: white;
-
   border-radius: 25px;
-
   display: block;
 }
 
 .journey-card h3 {
   margin-top: 20px;
-
   color: var(--dark-pink);
 }
 
 /* ==========================
-   IMPACT SECTION
+   IMPACT SECTION (SHECANCODE)
 ========================== */
 
 .impact-card {
   display: flex;
-
-  align-items: center;
-
+  flex-direction: column;
   gap: 40px;
-
   background: linear-gradient(135deg, #fff0f6, #ffe0ec);
-
-  padding: 40px;
-
-  border-radius: 40px;
-
+  padding: 50px;
+  border-radius: 45px;
   box-shadow: var(--shadow);
 }
 
-.impact-card img {
+.she-carousel {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 35px;
+  padding: 20px 0;
+}
+
+.she-track {
+  display: flex;
+  gap: 25px;
+  width: max-content;
+  animation: sheMove 25s linear infinite;
+}
+
+.she-track img {
   width: 350px;
-
   height: 350px;
-
   object-fit: contain;
-
   background: white;
-
-  padding: 10px;
-
+  padding: 15px;
   border-radius: 30px;
+  box-shadow: var(--shadow);
+}
+
+.she-carousel:hover .she-track {
+  animation-play-state: paused;
+}
+
+@keyframes sheMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.impact-card h3 {
+  font-size: 2rem;
+  color: var(--dark-pink);
+}
+
+.impact-card p {
+  max-width: 900px;
 }
 
 /* ==========================
-   MEMORIES CAROUSEL
+   MEMORIES CAROUSEL & GALLERY
 ========================== */
 
 .carousel {
@@ -335,70 +304,233 @@ header {
 
 .carousel-track {
   display: flex;
-
   gap: 20px;
-
   width: max-content;
-
   animation: movePhotos 25s linear infinite;
 }
 
 .carousel-track img {
   width: 320px;
-
   height: 380px;
-
   object-fit: contain;
-
   background: white;
-
   padding: 10px;
-
   border-radius: 25px;
-
   box-shadow: var(--shadow);
 }
 
 @keyframes movePhotos {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
-
-/* ==========================
-   GALLERY
-========================== */
 
 .gallery {
   columns: 3;
-
   column-gap: 20px;
 }
 
 .gallery img {
   width: 100%;
-
   height: 350px;
-
   object-fit: contain;
-
   background: white;
-
   padding: 10px;
-
   margin-bottom: 20px;
-
   border-radius: 25px;
-
   box-shadow: var(--shadow);
 }
 
+/* =====================================
+   TECH LAIR PROJECT PAGE & GRID
+===================================== */
+
+/* PROJECT HERO */
+.project-hero {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 150px 20px 80px;
+  background: linear-gradient(135deg, #fff0f6, #ffe1ed);
+}
+
+.project-hero h1 {
+  font-family: "Qwigley", cursive;
+  font-size: 6rem;
+  font-weight: 400;
+  color: #d66b9f;
+  margin-bottom: 20px;
+}
+
+.project-hero p {
+  max-width: 700px;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* PROJECT GRID */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 50px;
+}
+
+/* PROJECT CARDS CORE CHANGES (FLEX CONTAINER SETUP) */
+.project-card {
+  background: linear-gradient(135deg, #fff0f6, #ffffff);
+  padding: 30px;
+  border-radius: 35px;
+  box-shadow: var(--shadow);
+  transition: 0.4s;
+  
+  /* Forces content columns to uniform height */
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-12px);
+}
+
+/* IMAGE LAYOUTS */
+.project-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 25px;
+  margin-bottom: 25px;
+  background: #ffe4ef;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+}
+
+/* CARD CONTENT INTERNALS */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Makes internal container stretch down to match neighbor height */
+}
+
+.project-card h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #d66b9f;
+  margin-bottom: 15px;
+}
+
+.project-desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: auto; /* Magic line! Pushes everything below it straight to the bottom */
+}
+
+.tech-stack {
+  margin-top: 20px;
+  padding: 12px 18px;
+  background: #ffe4ef;
+  border-radius: 20px;
+  font-size: 0.9rem !important;
+  color: #b04f82 !important;
+  font-weight: 500;
+}
+
+.project-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.project-btn {
+  text-decoration: none;
+  background: #e8a0bf;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.project-btn:hover {
+  background: #d66b9f;
+  transform: translateY(-5px);
+}
+
+/* SPECIAL LEADERSHIP CARD HEADER OVERRIDE */
+.soft-skills-header {
+  background: linear-gradient(135deg, #e8a0bf 0%, #ffe4ef 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.soft-skills-icon-wrap i {
+  font-size: 4rem;
+  color: #ffffff;
+  filter: drop-shadow(0 4px 8px rgba(214, 107, 159, 0.3));
+}
+
+.active-btn {
+  background: #d66b9f;
+  font-weight: 500;
+  border: 1px dashed #ffffff;
+}
+
+.active-btn:hover {
+  background: #b04f82;
+}
+
 /* ==========================
-   SOCIALS
+   ENGINEERING TOOLKIT
+========================== */
+
+.toolkit {
+  margin-bottom: 80px;
+}
+
+.toolkit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.tool-card {
+  background: linear-gradient(135deg, #fff0f6, #ffffff);
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.tool-card:hover {
+  transform: translateY(-10px);
+}
+
+.tool-card h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3rem;
+  color: #d66b9f;
+  margin-bottom: 20px;
+}
+
+.tool-card p {
+  font-size: 1rem;
+  line-height: 2;
+}
+
+/* ==========================
+   SOCIALS & ICONS
 ========================== */
 
 .contact {
@@ -407,24 +539,29 @@ header {
 
 .social-links {
   display: flex;
-
   justify-content: center;
-
-  gap: 20px;
-
-  margin-top: 30px;
+  gap: 25px;
+  margin-top: 35px;
 }
 
 .social-links a {
-  text-decoration: none;
-
-  background: var(--pink);
-
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e8a0bf, #d66b9f);
   color: white;
+  font-size: 1.7rem;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition: 0.4s;
+}
 
-  padding: 12px 25px;
-
-  border-radius: 50px;
+.social-links a:hover {
+  transform: translateY(-10px) rotate(5deg);
+  box-shadow: 0 20px 40px rgba(214, 107, 159, 0.3);
 }
 
 /* ==========================
@@ -433,35 +570,31 @@ header {
 
 footer {
   text-align: center;
-
   padding: 30px;
-
   background: var(--soft-pink);
 }
 
 /* ==========================
-   MOBILE
+   RESPONSIVE DESIGN (MOBILE)
 ========================== */
 
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
-
     text-align: center;
   }
 
-  .hero-content,
-  .hero-image {
+  .hero-content, .hero-image {
     width: 100%;
   }
 
   .image-circle {
     width: 300px;
-
     height: 300px;
+    margin: 30px auto 0;
   }
 
-  .journey-cards {
+  .journey-cards, .project-grid, .toolkit-grid {
     grid-template-columns: 1fr;
   }
 
@@ -477,382 +610,11 @@ footer {
     display: none;
   }
 
-  .impact-card {
-    flex-direction: column;
-  }
-}
-/* ==========================
-   SHECANCODE IMPACT SECTION
-========================== */
-
-.impact-card {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 40px;
-
-  background: linear-gradient(135deg, #fff0f6, #ffe0ec);
-
-  padding: 50px;
-
-  border-radius: 45px;
-
-  box-shadow: var(--shadow);
-}
-
-/* SHECANCODE CAROUSEL AREA */
-
-.she-carousel {
-  width: 100%;
-
-  overflow: hidden;
-
-  border-radius: 35px;
-
-  padding: 20px 0;
-}
-
-.she-track {
-  display: flex;
-
-  gap: 25px;
-
-  width: max-content;
-
-  animation: sheMove 25s linear infinite;
-}
-
-.she-track img {
-  width: 350px;
-
-  height: 350px;
-
-  object-fit: contain;
-
-  background: white;
-
-  padding: 15px;
-
-  border-radius: 30px;
-
-  box-shadow: var(--shadow);
-}
-
-.she-carousel:hover .she-track {
-  animation-play-state: paused;
-}
-
-@keyframes sheMove {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* TEXT AREA */
-
-.impact-card h3 {
-  font-size: 2rem;
-
-  color: var(--dark-pink);
-}
-
-.impact-card p {
-  max-width: 900px;
-}
-/* ==========================
-   SOCIAL ICONS
-========================== */
-
-.social-links {
-  display: flex;
-
-  justify-content: center;
-
-  gap: 25px;
-
-  margin-top: 35px;
-}
-
-.social-links a {
-  width: 60px;
-
-  height: 60px;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  background: linear-gradient(135deg, #e8a0bf, #d66b9f);
-
-  color: white;
-
-  font-size: 1.7rem;
-
-  border-radius: 50%;
-
-  text-decoration: none;
-
-  box-shadow: var(--shadow);
-
-  transition: 0.4s;
-}
-
-.social-links a:hover {
-  transform: translateY(-10px) rotate(5deg);
-
-  box-shadow: 0 20px 40px rgba(214, 107, 159, 0.3);
-}
-
-/* =====================================
-   TECH LAIR PROJECT PAGE
-===================================== */
-
-/* PROJECT HERO */
-
-.project-hero {
-  min-height: 60vh;
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-
-  align-items: center;
-
-  text-align: center;
-
-  padding: 150px 20px 80px;
-
-  background: linear-gradient(135deg, #fff0f6, #ffe1ed);
-}
-
-.project-hero h1 {
-  font-family: "Qwigley", cursive;
-
-  font-size: 6rem;
-
-  font-weight: 400;
-
-  color: #d66b9f;
-
-  margin-bottom: 20px;
-}
-
-.project-hero p {
-  max-width: 700px;
-
-  font-size: 1.2rem;
-
-  color: #555;
-}
-
-/* PROJECT GRID */
-
-.project-grid {
-  display: grid;
-
-  grid-template-columns: repeat(2, 1fr);
-
-  gap: 40px;
-
-  margin-top: 50px;
-}
-
-/* PROJECT CARDS */
-
-.project-card {
-  background: linear-gradient(135deg, #fff0f6, #ffffff);
-
-  padding: 30px;
-
-  border-radius: 35px;
-
-  box-shadow: var(--shadow);
-
-  transition: 0.4s;
-}
-
-.project-card:hover {
-  transform: translateY(-12px);
-}
-
-/* PROJECT IMAGE */
-
-.project-image {
-  width: 100%;
-
-  height: 250px;
-
-  overflow: hidden;
-
-  border-radius: 25px;
-
-  margin-bottom: 25px;
-
-  background: #ffe4ef;
-}
-
-.project-image img {
-  width: 100%;
-
-  height: 100%;
-
-  object-fit: contain;
-
-  padding: 10px;
-}
-
-/* PROJECT TITLE */
-
-.project-card h3 {
-  font-family: "Poppins", sans-serif;
-
-  font-size: 1.7rem;
-
-  font-weight: 600;
-
-  color: #d66b9f;
-
-  margin-bottom: 15px;
-}
-
-/* PROJECT DESCRIPTION */
-
-.project-card p {
-  font-size: 1rem;
-
-  line-height: 1.7;
-
-  color: #444;
-}
-
-/* TECH STACK */
-
-.tech-stack {
-  margin-top: 20px;
-
-  padding: 12px 18px;
-
-  background: #ffe4ef;
-
-  border-radius: 20px;
-
-  font-size: 0.9rem !important;
-
-  color: #b04f82 !important;
-
-  font-weight: 500;
-}
-
-/* BUTTONS */
-
-.project-buttons {
-  display: flex;
-
-  gap: 15px;
-
-  margin-top: 25px;
-
-  flex-wrap: wrap;
-}
-
-.project-btn {
-  text-decoration: none;
-
-  background: #e8a0bf;
-
-  color: white;
-
-  padding: 12px 25px;
-
-  border-radius: 50px;
-
-  font-size: 0.95rem;
-
-  transition: 0.3s;
-}
-
-.project-btn:hover {
-  background: #d66b9f;
-
-  transform: translateY(-5px);
-}
-
-/* TECH LAIR MOBILE */
-
-@media (max-width: 900px) {
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
   .project-hero h1 {
     font-size: 4rem;
   }
 
   .project-card {
     padding: 25px;
-  }
-}
-/* ==========================
-ENGINEERING TOOLKIT
-========================== */
-
-.toolkit {
-  margin-bottom: 80px;
-}
-
-.toolkit-grid {
-  display: grid;
-
-  grid-template-columns: repeat(4, 1fr);
-
-  gap: 25px;
-}
-
-.tool-card {
-  background: linear-gradient(135deg, #fff0f6, #ffffff);
-
-  padding: 30px;
-
-  border-radius: 30px;
-
-  box-shadow: var(--shadow);
-
-  text-align: center;
-
-  transition: 0.3s;
-}
-
-.tool-card:hover {
-  transform: translateY(-10px);
-}
-
-.tool-card h3 {
-  font-family: "Poppins", sans-serif;
-
-  font-size: 1.3rem;
-
-  color: #d66b9f;
-
-  margin-bottom: 20px;
-}
-
-.tool-card p {
-  font-size: 1rem;
-
-  line-height: 2;
-}
-
-@media (max-width: 900px) {
-  .toolkit-grid {
-    grid-template-columns: 1fr;
   }
 }
